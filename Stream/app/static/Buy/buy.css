@@ -1,0 +1,22 @@
+.BuyBlock{
+    border: 5px solid blue;
+    position: relative;
+    width: 500px;
+    top: 100px;
+    left: 715px;
+    height: 500px;
+}
+
+.buyit{
+    position: relative;
+    top: 120px;
+    left: 200px;
+    size: 100px;
+}
+
+.kkk{
+    position: relative;
+    top: 120px;
+    left: -110px;
+    size: 100px;
+}

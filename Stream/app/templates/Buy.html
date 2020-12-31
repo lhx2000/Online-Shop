@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>购买</title>
+
+<link rel="stylesheet" type="text/css" href="../static/index/css/index.css">
+<link rel="stylesheet" type="text/css" href="../static/Game/game.css">
+<link rel="stylesheet" type="text/css" href="../static/Buy/buy.css">
+
+</head>
+<body>
+
+	<div id="page">
+		<div id="top">
+			<div id="top_left">
+				<h3 id="logo">Stream</h3>
+			</div>
+			<div id="top_right">
+				<a href="/HomePage">主页</a>|
+				<a href="/Account?UID={{User}}">我的账户</a>|
+				<a href="/SignUp">新用户注册</a>|
+				<a href="/quit">退出</a>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div id="menu">
+			<a href="/SearchList?Gtype=枪战">枪战</a>
+			<a href="/SearchList?Gtype=动作">动作</a>
+			<a href="/SearchList?Gtype=沙盒">沙盒</a>
+			<a href="/SearchList?Gtype=卡牌">卡牌</a>
+			<a href="/SearchList?Gtype=益智">益智</a>
+			<a href="/SearchList?Gtype=音乐">音乐</a>
+			<a href="/SearchList?Gtype=恐怖">恐怖</a>
+			<a href="/SearchList?Gtype=体育">体育</a>
+			<a href="/SearchList?Gtype=竞速">竞速</a>
+			<a class="all" href="/SearchList">全部目录商品</a>
+		</div>
+		<form action="/HomePage">
+			<center>
+				<span>探索一下，发现惊奇！</span>
+				<input type="text" name = 'content'/>
+				<input type="submit" name = 'search' value="搜索" />
+				<select name="range">
+					<option value="Gname">名称</option>
+					<option value="Gfirm">厂商</option>
+				</select>
+		    </center>
+		</form>
+		<div class = "BuyBlock">
+			<div class="BuyInfo">
+				尊敬的用户{{v[0]}}:<br>
+				&nbsp;&nbsp;您将要购买的游戏为{{u[1]}}，售价{{u[2]}}元。<br>
+				&nbsp;&nbsp;您现在的账户余额为{{v[1]}}元。<br>
+					{% if u[2] > v[1] %}
+					&nbsp;&nbsp;您现在的余额不足，无法购买该游戏！
+						<a href="/Account"><button class="kkk">去氪金吧！！</button></a>
+					{% else %}
+					<form action="/Buy" method="POST">
+						<input class="buyit" type="submit" name={{u[0]}} value="确认购买！！">
+					</form>
+					{% endif %}
+	
+			</div>
+		</div>
+		<div class = "bottom">
+			<br><br><br>
+		</div>
+
+
+    </div>
+
+</body>
+</html>

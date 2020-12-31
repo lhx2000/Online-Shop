@@ -1,0 +1,47 @@
+.SearchBlock{
+    height: 150px;
+
+
+}
+
+.pic{
+    height: 150px;
+    width: 150px;
+}
+
+.name{
+    position: relative;
+    left: 170px;
+    bottom: 150px;
+
+}
+
+.type{
+    position: relative;
+    left: 170px;
+    bottom: 130px;
+}
+
+.date{
+    position: relative;
+    left: 170px;
+    bottom: 110px;
+}
+
+.score{
+    position: relative;
+    left: 170px;
+    bottom: 95px;
+}
+
+.enter{
+    position: relative;
+    left: 900px;
+    bottom: 180px;
+}
+
+.sale{
+    position: relative;
+    left: 900px;
+    bottom: 75px;
+}

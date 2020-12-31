@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+	<head>
+		<title>游戏管理界面</title>
+		<link rel="stylesheet" type="text/css" href="../static/GameManager/css/box.css">
+	</head>
+	<body>
+        <form action = "/GameManager" method = "POST">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>游戏管理界面</b>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" name="search" style="width:480px;"> 
+			<input type="submit" value="查找">
+			<select name="searchRange" id="">
+				<option value="Gname">名称</option>
+				<option value="Gtype">类型</option>
+				<option value="Gfirm">厂商</option>
+				<option value="Gscore">评分</option>
+				<option value="Gdate">日期</option>
+				<option value="Gsale">售价</option>
+			</select>
+
+			<a style="position: absolute; right: 0;"><input type="submit" value="退出" name = "quit"></input></a>
+		</form>	
+
+		<body>
+			<button id = "add" >添加</button>
+			<div id = "addBox" class = "Box">
+				<form action="/GameManager" method="POST">
+				<div class = "boxContent">
+					<div class = "boxHeader">
+						<h2>添加游戏</h2>
+						<span id = "closeBox" class = "close">关闭</span>
+					</div>
+					<div class = "boxBody">
+						游戏名称：<input type="text" name = "Gname" required = "required"><br><br>
+						游戏公司：<input type="text" name = "Gfirm" required = "required"><br><br>
+						游戏类型：<input type="text" name = "Gtype" required = "required"><br><br>
+						发行日期：<input type="text" name = "Gdate" required = "required"><br><br>
+						游戏售价：<input type="text" name = "Gsale" required = "required"><br><br>
+						游戏评分：<input type="text" name = "Gscore" required = "required"><br><br>
+						游戏介绍：<input type="text" name = "Ginfo" required = "required"><br><br>
+					</div>
+					<div class = "boxFooter">
+						<input type="submit" value="添加">
+					</div>
+				</div>
+				</form>
+			</div>
+			<script type = "text/javascript" src = "../static/GameManager/js/addBox.js"></script>
+		</body>
+			
+		<form action = "/GameManager" method = "POST">
+			<table width="100%">
+				<thead>
+					<tr>
+						<th width = "15%">编号</th>
+						<th width = "20%">游戏</th>
+						<th width = "20%">厂商</th>
+						<th width = "5%">类型</th>
+                        <th width = "15%">发行日期</th>
+                        <th width = "10%">售价</th>
+						<th width = "5%">评分</th>
+						<th width = "5%">修改</th>
+						<th width = "5%">删除</th>
+					</tr>
+				</thead>
+				<tbody>  
+					{% for row in u %}
+					<tr>
+						<td align="center">{{row[0]}}</td>
+						<td align="center">{{row[1]}}</td>
+						<td align="center">{{row[2]}}</td>
+                        <td align="center">{{row[3]}}</td>
+                        <td align="center">{{row[4]}}</td>
+                        <td align="center">{{row[5]}}</td>
+						<td align="center">{{row[6]}}</td>
+						<td align="center"></a><input type="submit" name ={{row[0]}} value="修改"></input></a>	
+						<td align="center"></a><input type="submit" name={{row[0]}} value="删除"></input></a>
+					</tr>	
+																						
+					{% endfor %}
+					
+			</tbody>
+			</table>
+		</form>
+
+	</body>
+</html>
+
+
+
+

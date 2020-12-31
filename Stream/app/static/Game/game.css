@@ -1,0 +1,197 @@
+#h1{
+	color: #0000FF;
+    font-size: 30px;
+}
+
+body{
+    margin: 0px;
+    background-color: #c6d4df;
+}
+
+.clear{
+    clear:both;
+}
+
+#top_left{
+    width:300px;
+    float: left;
+}
+#top_right{
+    width:400px;
+    float: right;
+    margin-top:15px;
+    font-size: 13px;
+}
+#top_right img{
+    margin-bottom: -5px;
+}
+#top_right a{
+    text-decoration: none;
+    color:#06F;
+}
+#top_right a:hover{
+    color:#909;
+}
+
+#menu{
+    background-color: #1C3F09;
+    border-top:5px solid #82B211;
+    padding: 10px 0px;
+    text-align: center;
+}
+#menu a{
+    margin: 0 8px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+}
+#menu a:hover{
+    color: #999;
+}
+#menu .all{
+    color: yellow
+}
+
+#search{
+    background-color: #B6B684;
+    padding:7px 0;
+    text-align: right;
+
+}
+#search input[type='image']{
+    /* margin-top: 5px; */
+    margin-right: 250px;
+    margin-bottom: -4px;
+}
+#search input[type='text']{
+    height: 16px;
+    border:1px solid #999;
+}
+
+#game_name{
+    position: relative;
+    left: 160px;
+    top: 10px;
+    color: #fff;
+    font-size: 30px;
+    width: min-content;
+}
+
+#game_img{
+    position: relative;
+    left: 100px;
+    float:left;
+}
+
+#game_img img[alt='game']{
+    position: relative;
+    left: 60px;
+    top: 10px;
+    width : 550px;
+    height : 550px;
+}
+
+#introduce{
+    position: absolute;
+    left: 750px;
+    font-size: 30px;
+    width: min-content;
+}
+
+#buy{
+    width: min-content;
+    position: absolute;
+    left: 900px;
+    top: 700px;
+}
+#buy button{
+    height: 35px;
+    width:  50px;
+    background-color: #82B211;
+}
+
+#comment{
+    position: absolute;
+    width: 900px;
+    left: 161px;
+    top: 850px;
+    font-size: 30px;
+}
+
+.ContentBlock{
+    position: relative;
+    top:100px;
+}
+
+.pic{
+    position: relative;
+    left: 100px;
+    height: 600px;
+    width: 600px;
+}
+
+.name{
+    position: relative;
+    left: 750px;
+    bottom: 575px;
+}
+
+.firm{
+    position: relative;
+    left: 750px;
+    bottom: 555px;
+}
+
+.type{
+    position: relative;
+    left: 750px;
+    bottom: 535px;
+}
+
+.date{
+    position: relative;
+    left: 750px;
+    bottom: 515px;
+}
+
+.score{
+    position: relative;
+    left: 750px;
+    bottom: 495px;
+}
+
+.info{
+    position: relative;
+    left: 750px;
+    bottom: 485px;
+    width: 600px;
+    line-height: 30px;
+}
+
+.sale{
+    position: relative;
+    left: 1200px;
+    bottom: 600px;
+}
+
+.enter{
+    position: relative;
+    left: 1200px;
+    bottom: 620px;
+}
+
+.commentBlock{
+    position: relative;
+    left: 200px;
+}
+
+.star{
+    position: relative;
+    left: 250px;
+    bottom: 25px;
+}
+
+.ctt{
+    position: relative;
+}

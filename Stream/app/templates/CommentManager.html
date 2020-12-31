@@ -1,0 +1,46 @@
+<html>
+	<head><title>评论管理界面</title>
+		
+	</head>
+	<body>
+        <form action = "/CommentManager" method = "POST">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>评论管理界面</b>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" name="search" style="width:480px;"> 
+            <input type="submit" value="查找">
+            <select name="searchRange" id="">
+				<option value="Cgame">游戏</option>	
+				<option value="Cuser">用户</option>
+				<option value="Ccontent">评论</option>
+			</select>
+			<a style="position: absolute; right: 0;"><input type="submit" value="退出" name = "quit"></input></a>
+		</form>
+
+		<form action = "/CommentManager" method = "POST">
+			<table width="100%">
+				<thead>
+					<tr>
+						<th width = "20%">编号</th>
+						<th width = "10%">用户</th>
+						<th width = "20%">游戏</th>
+                        <th width = "10%">星级</th>
+                        <th width = "35%">评论</th>
+                        <th width = "5%">删除</th>
+					</tr>
+				</thead>
+				<tbody>  
+					{% for row in u %}
+					<tr>
+						<td align="center">{{row[0]}}</td>
+						<td align="center">{{row[1]}}</td>
+						<td align="center">{{row[2]}}</td>
+                        <td align="center">{{row[3]}}</td>	
+                        <td align="center">{{row[4]}}</td>	
+						<td align="center"></a><input type="submit" name={{row[0]}} value="删除"></input></a>
+					</tr>																		
+					{% endfor %}
+			</tbody>
+			</table>
+		</form>
+	</body>
+</html>

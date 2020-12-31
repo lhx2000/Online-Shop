@@ -1,0 +1,49 @@
+<html>
+	<head><title>订单管理界面</title>
+		
+	</head>
+	<body>
+        <form action = "/OrderManager" method = "POST">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>订单管理界面</b>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" name="search" style="width:480px;"> 
+            <input type="submit" value="查找">
+            <select name="searchRange" id="">
+				<option value="Ogame">游戏</option>	
+				<option value="Ouser">用户</option>
+				<option value="Odate">日期</option>
+			</select>
+			<a style="position: absolute; right: 0;"><input type="submit" value="退出" name = "quit"></input></a>
+		</form>
+
+		<form action = "/OrderManager" method = "POST">
+			<table width="100%">
+				<thead>
+					<tr>
+						<th width = "25%">编号</th>
+						<th width = "10%">用户</th>
+						<th width = "20%">游戏</th>
+                        <th width = "10%">金额</th>
+                        <th width = "10%">日期</th>
+                        <th width = "20%">是否已付款</th>
+                        <th width = "5%">删除</th>
+					</tr>
+				</thead>
+				<tbody>  
+					{% for row in u %}
+					<tr>
+						<td align="center">{{row[0]}}</td>
+						<td align="center">{{row[1]}}</td>
+						<td align="center">{{row[2]}}</td>
+                        <td align="center">{{row[3]}}</td>	
+                        <td align="center">{{row[4]}}</td>	
+                        <td align="center">{{row[5]}}</td>	
+						<td align="center"></a><input type="submit" name={{row[0]}} value="删除"></input></a>
+					</tr>																		
+					{% endfor %}
+			</tbody>
+			</table>
+		</form>
+
+	</body>
+</html>

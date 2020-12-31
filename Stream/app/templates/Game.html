@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>{{u[1]}}</title>
+
+<link rel="stylesheet" type="text/css" href="../static/index/css/index.css">
+<link rel="stylesheet" type="text/css" href="../static/Game/game.css">
+<link rel="stylesheet" type="text/css" href="../static/Account/css/cbox.css">
+</head>
+<body>
+
+	<div id="page">
+		<div id="top">
+			<div id="top_left">
+				<h3 id="logo">Stream</h3>
+			</div>
+			<div id="top_right">
+				<a href="/HomePage">主页</a>|
+				<a href="/Account?UID={{User}}">我的账户</a>|
+				<a href="/SignUp">新用户注册</a>|
+				<a href="/quit">退出</a>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div id="menu">
+			<a href="/SearchList?Gtype=枪战">枪战</a>
+			<a href="/SearchList?Gtype=动作">动作</a>
+			<a href="/SearchList?Gtype=沙盒">沙盒</a>
+			<a href="/SearchList?Gtype=卡牌">卡牌</a>
+			<a href="/SearchList?Gtype=益智">益智</a>
+			<a href="/SearchList?Gtype=音乐">音乐</a>
+			<a href="/SearchList?Gtype=恐怖">恐怖</a>
+			<a href="/SearchList?Gtype=体育">体育</a>
+			<a href="/SearchList?Gtype=竞速">竞速</a>
+			<a class="all" href="/SearchList">全部目录商品</a>
+		</div>
+		<form action="/HomePage">
+			<center>
+				<span>探索一下，发现惊奇！</span>
+				<input type="text" name = 'content'/>
+				<input type="submit" name = 'search' value="搜索" />
+				<select name="range">
+					<option value="Gname">名称</option>
+					<option value="Gfirm">厂商</option>
+				</select>
+		    </center>
+		</form>
+		<div class = "ContentBlock">
+			<img src="../static/GamePic/{{u[0]}}.jpg" alt="这里本应是张图片" class="pic">
+			<div class="GameInfo">
+				<div class = "name">游戏名称：{{u[1]}}</div>
+				<div class = "firm">发行公司：{{u[2]}}</div>
+				<div class = "type">游戏类型：{{u[3]}}</div>
+				<div class = "date">发行日期：{{u[5]}}</div>
+				<div class = "score">权威评分：{{u[7]}}</div>
+				<div class = "sale">售价：{{u[6]}}</div>
+				<div class = "info">介绍：{{u[4]}}</div>
+				<div class = "enter">
+					<form action="/Buy" method="POST">
+						<input type="submit" name={{u[0]}} value="我要买！！！">
+					</form>
+				</div>
+			</div>
+		</div>
+		<br><br><center><font size = "10" color = "red" weight="bold">评论</font></center><br><br>
+		{% for row in v %}
+		<div class="commentBlock">
+			<div class = "user"><font size = "5">用户：{{row[0]}}</font></div>
+			<div class = "star">星级★:{{row[1]}}</div>
+			<div class = "ctt">评论：{{row[2]}}</div>	
+		</div>
+		<br><br>
+		{% endfor %}
+
+		<div class = "bottom">
+			<br><br><br>
+		</div>
+    </div>
+</body>
+
+<body>
+    <center><button id = "changeCom">发表评论</button></center>
+    <div id = "changeComBox" class = "cBox">
+        <form action="/Comment" method="POST">
+        <div class = "cboxContent">
+            <div class = "cboxHeader">
+                <h2>发表评论</h2>
+                <span id = "closeComPBox" class = "cclose">关闭</span>
+            </div>
+            <div class = "cboxBody">
+				游戏：{{u[1]}}<input type="hidden" name="game" value={{u[0]}}><br><br>
+                星级：<input type="number" name = "star" required = "required" min = "0" max = "5"><br><br>
+                评论：<input type="text" name = "com" required = "required" placeholder="畅所欲言！"><br><br>
+            </div>
+            <div class = "cboxFooter">
+                <input type="submit" value="发表">
+            </div>
+        </div>
+        </form>
+    </div>
+    <script type = "text/javascript" src = "../static/Game/js/changecombox.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改游戏信息</title>
+</head>
+<body>
+    <form action="/ChangeGameInfo" method="POST">
+        <div class = "boxContent">
+            <div class = "boxHeader">
+                <h2>修改游戏</h2>
+            </div>
+            <div class = "boxBody">
+                游戏编号：{{u[0]}}<br><br>
+                游戏名称：{{u[1]}}<br><br>
+                游戏公司：{{u[2]}}<br><br>
+                游戏类型：{{u[3]}}<br><br>
+                发行日期：{{u[4]}}<br><br>
+                游戏售价：<input type="text" name = "Gsale" required = "required" value={{u[5]}}><br><br>
+                游戏评分：<input type="text" name = "Gscore" required = "required" value={{u[6]}}><br><br>
+            </div>
+            <div class = "boxFooter">
+                <input type="submit" name={{u[0]}} value="修改">
+            </div>
+        </div>
+        </form>
+</body>
+</html>

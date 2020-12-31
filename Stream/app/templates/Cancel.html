@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>购买</title>
+
+<link rel="stylesheet" type="text/css" href="../static/index/css/index.css">
+<link rel="stylesheet" type="text/css" href="../static/Game/game.css">
+<link rel="stylesheet" type="text/css" href="../static/Buy/buy.css">
+
+</head>
+<body>
+
+	<div id="page">
+		<div id="top">
+			<div id="top_left">
+				<h3 id="logo">Stream</h3>
+			</div>
+			<div id="top_right">
+				<a href="/HomePage">主页</a>|
+				<a href="/Account?UID={{User}}">我的账户</a>|
+				<a href="/SignUp">新用户注册</a>|
+				<a href="/quit">退出</a>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div id="menu">
+			<a href="/SearchList?Gtype=枪战">枪战</a>
+			<a href="/SearchList?Gtype=动作">动作</a>
+			<a href="/SearchList?Gtype=沙盒">沙盒</a>
+			<a href="/SearchList?Gtype=卡牌">卡牌</a>
+			<a href="/SearchList?Gtype=益智">益智</a>
+			<a href="/SearchList?Gtype=音乐">音乐</a>
+			<a href="/SearchList?Gtype=恐怖">恐怖</a>
+			<a href="/SearchList?Gtype=体育">体育</a>
+			<a href="/SearchList?Gtype=竞速">竞速</a>
+			<a class="all" href="/SearchList">全部目录商品</a>
+		</div>
+		<form action="/HomePage">
+			<center>
+				<span>探索一下，发现惊奇！</span>
+				<input type="text" name = 'content'/>
+				<input type="submit" name = 'search' value="搜索" />
+				<select name="range">
+					<option value="Gname">名称</option>
+					<option value="Gfirm">厂商</option>
+				</select>
+		    </center>
+		</form>
+		<div class = "BuyBlock">
+			<div class="BuyInfo">
+				尊敬的用户{{v[0]}}:<br>
+                    {% if judge == 0  %}
+                    &nbsp;&nbsp;您将要退款的游戏{{u[1]}}购买时间为{{time}}，距今已超过一天，不能进行退款操作！<br>
+					<a href="/Account"><button class="ttt" style="position: relative;left: 190px;top: 100px;">含泪取消退款</button></a>
+                    {% else %}
+                    &nbsp;&nbsp;您将要退款的游戏为{{u[1]}}，这可是一款不可多得的好游戏，您确认要退款吗？<br>
+                    &nbsp;&nbsp;三思而后行！！！
+					<form action="/Cancel" method="POST">
+						<input class="buyit" type="submit" name={{u[0]}} value="骗钱的东西！！退！！">
+					</form>
+					{% endif %}
+	
+			</div>
+		</div>
+		<div class = "bottom">
+			<br><br><br>
+		</div>
+
+
+    </div>
+
+</body>
+</html>

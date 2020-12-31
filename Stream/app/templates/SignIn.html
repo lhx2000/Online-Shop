@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="../static/login/css/login.css">
+    <script type="text/javascript" src="../static/login/js/jquery.min.js"></script>
+</head>
+<body>
+<div id="global_header">
+	<div class="content">
+		<div class="logo">
+			<h1 id="logo">Stream</h1>
+		</div>
+			</div>
+</div>
+
+    <div class="container">
+        <div class="wrap">
+            <article>
+                <section>
+                    <aside>
+                        <em>
+                            <img src="../static/login/img/user.png">
+                        </em>
+                         <form action="/SignIn" method="POST">
+                            <p class="name"><i></i><input type="text" name="username" placeholder="请输入用户名"></p>
+                            <p class="password"><i></i><input type="password" name="passwd" placeholder="请输入密码"></p>
+                            <button type = "submit">登录</button>
+                            <p class="remember"><input type="checkbox" name="remember"><font color = "white">记住密码</font></p>
+                            <p class="regist"><span><font color = "white">没有账号?</font></span><a href="/SignUp">立即注册</a></p>
+                            <div class="clear"></div>
+                        </form>
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                            <ul>
+                                {% for message in messages %}
+                                <li><font color = "white" size = "5">{{message}}</font></li>
+                                {% endfor %}    
+                            </ul>
+                            {% endif %}
+                        {% endwith %}
+                    </aside>
+                   
+                </section>               
+            </article>
+        </div>
+    </div>
+</body>
+</html>

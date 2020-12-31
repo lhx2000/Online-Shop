@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>主页</title>
+
+<link rel="stylesheet" type="text/css" href="../static/index/css/index.css">
+
+</head>
+<body background="../static/index/images/backGround.jpg">
+
+	<div id="page">
+		<div id="top">
+			<div id="top_left">
+				<h3 id="logo">Stream</h3>
+			</div>
+			<div id="top_right">
+				<a href="/HomePage">主页</a>|
+				<a href="/Account?UID={{User}}">我的账户</a>|
+				<a href="/SignUp">新用户注册</a>|
+				<a href="/quit">退出</a>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div id="menu">
+			<a href="/SearchList?Gtype=枪战">枪战</a>
+			<a href="/SearchList?Gtype=动作">动作</a>
+			<a href="/SearchList?Gtype=沙盒">沙盒</a>
+			<a href="/SearchList?Gtype=卡牌">卡牌</a>
+			<a href="/SearchList?Gtype=益智">益智</a>
+			<a href="/SearchList?Gtype=音乐">音乐</a>
+			<a href="/SearchList?Gtype=恐怖">恐怖</a>
+			<a href="/SearchList?Gtype=体育">体育</a>
+			<a href="/SearchList?Gtype=竞速">竞速</a>
+			<a class="all" href="/SearchList">全部目录商品</a>
+		</div>
+		<form action="/HomePage">
+			<center>
+				<span>探索一下，发现惊奇！</span>
+				<input type="text" name = 'content'/>
+				<input type="submit" name = 'search' value="搜索" />
+				<select name="range">
+					<option value="Gname">名称</option>
+					<option value="Gfirm">厂商</option>
+				</select>
+		    </center>
+		</form>
+		<div id="content">
+			<div id="content_bottom">
+				<h1>商品目录</h1>
+				<hr/>
+				<h1>推荐</h1>
+				<hr/>
+				<div id="productlist">
+					<div id="productlist_img">
+						<img alt="" src="../static/index/images/productlist.gif" width="100%">
+					</div>
+					<div id="booklist">
+						<div class="book">
+							<div class="bookimg">
+								<a href="/Game?GID=G202000000"><img src="../static/GamePic/G202000000.jpg" alt=""></a>
+							</div>
+							<div class="bookIntr">
+								<span>名称：Grand Theft Auto V</span><br/>
+								<span>售价：119.0</span>
+							</div>
+						</div>
+						<div class="book">
+							<div class="bookimg">
+								<a href="/Game?GID=G202000001"><img src="../static/GamePic/G202000001.jpg" alt=""></a>
+							</div>
+							<div class="bookIntr">
+								<span>名称：PLAYERUNKNOWN’S BATTLEGROUNDS</span><br/>
+								<span>售价：98.0</span>
+							</div>
+						</div>
+						<div class="book">
+							<div class="bookimg">
+								<a href="/Game?GID=G202000003"><img src="../static/GamePic/G202000003.jpg" alt=""></a>
+							</div>
+							<div class="bookIntr">
+								<span>名称：Red Dead Redemption 2</span><br/>
+								<span>售价：166.0</span>
+							</div>
+						</div>
+						<div class="book">
+							<div class="bookimg">
+								<a href="/Game?GID=G202000004"><img src="../static/GamePic/G202000004.jpg" alt=""></a>
+							</div>
+							<div class="bookIntr">
+								<span>名称：Counter-Strike: Global Offensive</span><br/>
+								<span>售价：100.0</span>
+							</div>
+						</div>
+						<div class="book">
+							<div class="bookimg">
+								<a href="/Game?GID=G202000005"><img src="../static/GamePic/G202000005.jpg" alt=""></a>
+							</div>
+							<div class="bookIntr">
+								<span>名称：Tom Clancy's Rainbow Six?Siege</span><br/>
+								<span>售价：58.0</span>
+							</div>
+						</div>
+						<div class="book">
+							<div class="bookimg">
+								<a href="/Game?GID=G202000006"><img src="../static/GamePic/G202000006.jpg" alt=""></a>
+							</div>
+							<div class="bookIntr">
+								<span>名称：Sniper Elite 4</span><br/>
+								<span>售价：158.0</span>
+							</div>
+						</div>
+						<div class="book">
+							<div class="bookimg">
+								<a href="/Game?GID=G202000007"><img src="../static/GamePic/G202000007.jpg" alt=""></a>
+							</div>
+							<div class="bookIntr">
+								<span>名称：Titanfall 2</span><br/>
+								<span>售价：188.0</span>
+							</div>
+						</div>
+						<div class="book">
+							<div class="bookimg">
+								<a href="/Game?GID=G202000009"><img src="../static/GamePic/G202000009.jpg" alt=""></a>
+							</div>
+							</div>
+							<div>
+								<span>名称: Monster Hunter: World</span>
+								<br>
+								<span>售价: 203.0</span>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="bottom">
+				<center>
+					<span>copyright 2020 &copy; Stream All Rights RESERVED</span>
+			    </center>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

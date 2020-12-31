@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/Account/css/cbox.css">
+    <title>个人中心</title>
+</head>
+<a href="/HomePage" style="position: absolute; right: 0px;">回到首页</a>
+<body>
+    用户：{{info[1]}}<br><br>
+    邮箱：{{info[2]}}<br><br>
+    电话：{{info[3]}}<br><br>
+    年龄：{{info[4]}}<br><br>
+    性别：{{info[5]}}<br><br>
+    账户余额：{{info[6]}}<br><br>
+</body>
+<body>
+    <button id = "change" >修改个人信息</button>
+    <div id = "changeBox" class = "cBox">
+        <form action="/Account?UID={{info[0]}}" method="POST">
+        <div class = "cboxContent">
+            <div class = "cboxHeader">
+                <h2>修改信息</h2>
+                <span id = "closeChangeBox" class = "cclose">关闭</span>
+            </div>
+            <div class = "cboxBody">
+                用户：{{info[1]}}<br><br>
+                邮箱：<input type="text" name = "Umail" required = "required" value = {{info[2]}}><br><br>
+                电话：<input type="text" name = "Utelnumber" required = "required" value = {{info[3]}}><br><br>
+                年龄：<input type="text" name = "Uage" required = "required" value = {{info[4]}}><br><br>
+                性别：<select name="Usex" Usex = {{info[5]}}>
+                        <option value="男">男</option>	
+                        <option value="女">女</option>
+                    </select>
+            </div>
+            <div class = "cboxFooter">
+                <input type="submit" value="修改">
+            </div>
+        </div>
+        </form>
+    </div>
+    <script type = "text/javascript" src = "../static/Account/js/changeBox.js"></script>
+</body>
+
+<body>
+    <button id = "changeP">修改密码</button>
+    <div id = "changePBox" class = "cBox">
+        <form action="/Account?UID={{info[0]}}" method="POST">
+        <div class = "cboxContent">
+            <div class = "cboxHeader">
+                <h2>修改密码</h2>
+                <span id = "closeChangePBox" class = "cclose">关闭</span>
+            </div>
+            <div class = "cboxBody">
+                请输入当前密码：<input type="password" name = "oldPasswd" required = "required"><br><br>
+                请输入新密码：<input type="password" name = "newPasswd" required = "required"><br><br>
+                请再次输入新密码：<input type="password" name = "newPasswd2" required = "required"><br><br>
+            </div>
+            <div class = "cboxFooter">
+                <input type="submit" value="修改">
+            </div>
+        </div>
+        </form>
+    </div>
+    <script type = "text/javascript" src = "../static/Account/js/changePBox.js"></script>
+</body>
+
+<body>
+    <button id = "changeM"  style="width: 250px;height: 250px;">我要氪金！！！！</button>
+    <div id = "changeMBox" class = "cBox">
+        <form action="/Account?UID={{info[0]}}" method="POST">
+        <div class = "cboxContent">
+            <div class = "cboxHeader">
+                <h2>修改密码</h2>
+                <span id = "closeChangeMBox" class = "cclose">关闭</span>
+            </div>
+            <div class = "cboxBody">
+                我要充：<input type="text" name = "ammount" required = "required">元！！！<br><br>
+                <img src="../static/Account/images/target.png">
+            </div>
+            <div class = "cboxFooter">
+                <input type="submit" value="氪氪氪！！！">
+            </div>
+        </div>
+        </form>
+    </div>
+    <script type = "text/javascript" src = "../static/Account/js/changeMBox.js"></script>
+    <br><br><br><br><br><br><br><br>
+    <div class = "store">
+        <center><font size="6" color = "red">我的仓库</font></center><br><br><br>
+        <form action = "/Cancel" method = "POST">
+			<table width="80%">
+				<thead>
+					<tr>
+						<th width = "20%">游戏</th>
+                        <th width = "20%">售价</th>
+                        <th width = "20%">购入时间</th>
+						<th width = "10%">退货</th>
+						<th width = "10%">删除</th>
+					</tr>
+				</thead>
+				<tbody>  
+					{% for row in sto %}
+					<tr>
+						<td align="center">{{row[0]}}</td>
+						<td align="center">{{row[1]}}</td>
+                        <td align="center">{{row[2]}}</td>
+						<td align="center"></a><input type="submit" name ={{row[3]}} value="退货"></input></a>	
+						<td align="center"></a><input type="submit" name={{row[3]}} value="删除"></input></a>
+					</tr>																	
+					{% endfor %}	
+			</tbody>
+			</table>
+		</form>
+    </div>
+</body>
+</html>

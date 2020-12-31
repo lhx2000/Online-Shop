@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="../static/regist/css/regist.css">
+    <script type="text/javascript" src="../static/regist/js/jquery.min.js"></script>
+</head>
+
+<body>
+
+<div id="global_header">
+	<div class="content">
+		<div class="logo">
+			<h1 id="logo">Stream</h1>
+        </div>
+    <a href="/SignIn" style="display: block;text-align:right;color: rgb(255, 255, 255);">登录</a>
+	</div>
+</div>
+
+
+    <div class="wrapper">
+        <article>
+            <h1><span>注册</span></h1>
+            <div class="main">
+                <form action="/SignUp" method="POST">
+                    <div class="register">
+                        <input type="tel" name="telnumber" placeholder="手机号">
+                    </div>
+                    <div class="userName">
+                        <input type="text" name="username" placeholder="用户名">
+                    </div>
+                    <div class="password">
+                        <input type="password" name="passwd" placeholder="密码">
+                    </div>
+                    <div class="againpwd">
+                        <input type="password" name="passwd2" placeholder="再次输入密码">
+                    </div>
+                    <button type="submit">注册</button>
+                </form>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul>
+                        {% for message in messages %}
+                            <li><font color = 'red'>{{message}}</font></li>
+                        {% endfor %}    
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            </div>
+
+        </article>
+
+    </div>
+</body>
+</html>

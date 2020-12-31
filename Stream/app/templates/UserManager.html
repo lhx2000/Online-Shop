@@ -1,0 +1,42 @@
+<html>
+	<head><title>用户管理界面</title>
+		
+	</head>
+	<body>
+        <form action = "/UserManager" method = "POST">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>用户管理界面</b>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" name="search" style="width:480px;"> 
+			<input type="submit" value="查找">
+			<a style="position: absolute; right: 0;"><input type="submit" value="退出" name = "quit"></input></a>
+		</form>
+
+		<form action = "/UserManager" method = "POST">
+			<table width="100%">
+				<thead>
+					<tr>
+						<th width = "30%">编号</th>
+						<th width = "10%">用户</th>
+						<th width = "20%">Email</th>
+						<th width = "20%">余额</th>
+						<th width = "10">提升</th>
+						<th width = "10%">删除</th>
+					</tr>
+				</thead>
+				<tbody>  
+					{% for row in u %}
+					<tr>
+						<td align="center">{{row[0]}}</td>
+						<td align="center">{{row[1]}}</td>
+						<td align="center">{{row[2]}}</td>
+						<td align="center">{{row[3]}}</td>	
+						<td align="center"></a><input type="submit" name={{row[0]}} value="提升"></input></a>
+						<td align="center"></a><input type="submit" name={{row[0]}} value="删除"></input></a>
+					</tr>																		
+					{% endfor %}
+			</tbody>
+			</table>
+		</form>
+
+	</body>
+</html>

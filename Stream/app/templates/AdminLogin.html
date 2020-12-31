@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/AdminLogin" method="POST">
+        <h1>
+            用户名：<input type="text" name="username">
+            密码：<input type="password" name="passwd">
+            <button type="submit">登录</button>
+        </h1>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{message}}</li>
+            {% endfor %}    
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <center><br><br><br><br><br><br><font size = '10'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;朴素之中蕴含着伟大<br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ————某页面设计师</font></center>
+</body>
+</html>
